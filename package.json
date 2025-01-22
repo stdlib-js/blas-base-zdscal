@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@stdlib/assert-is-error": "^0.2.2",
+    "@stdlib/complex-float64-base-scale": "github:stdlib-js/complex-float64-base-scale#main",
     "@stdlib/strided-base-reinterpret-complex128": "^0.2.2",
     "@stdlib/strided-base-stride2offset": "^0.1.0",
     "@stdlib/types": "^0.4.3",
