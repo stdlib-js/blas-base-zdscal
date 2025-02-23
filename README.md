@@ -35,38 +35,32 @@ limitations under the License.
 
 > Scale a double-precision complex floating-point vector by a double-precision floating-point constant.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-zdscal
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-zdscal = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var zdscal = require( 'path/to/vendor/umd/blas-base-zdscal/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.zdscal;
-})();
-</script>
+var zdscal = require( '@stdlib/blas-base-zdscal' );
 ```
 
 #### zdscal( N, da, zx, strideZX )
@@ -75,21 +69,11 @@ Scales a double-precision complex floating-point vector by a double-precision fl
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] );
 
 zdscal( 3, 2.0, zx, 1 );
-
-var z = zx.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns 2.0
-
-var im = imag( z );
-// returns 2.0
+// zx => <Complex128Array>[ 2.0, 2.0, 2.0, 2.0, 2.0, 2.0 ]
 ```
 
 The function has the following parameters:
@@ -103,21 +87,11 @@ The `N` and stride parameters determine which elements in `zx` are scaled by `da
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 
 zdscal( 2, 2.0, zx, 2 );
-
-var z = zx.get( 2 );
-// returns <Complex128>
-
-var re = real( z );
-// returns 10.0
-
-var im = imag( z );
-// returns 12.0
+// zx => <Complex128Array>[ 2.0, 4.0, 3.0, 4.0, 10.0, 12.0, 7.0, 8.0 ]
 ```
 
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
@@ -126,8 +100,6 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 // Initial array:
 var zx0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
@@ -137,24 +109,7 @@ var zx1 = new Complex128Array( zx0.buffer, zx0.BYTES_PER_ELEMENT*1 ); // start a
 
 // Scale every element in `zx1`:
 zdscal( 3, 2.0, zx1, 1 );
-
-var z = zx0.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns 1.0
-
-var im = imag( z );
-// returns 2.0
-
-z = zx0.get( 1 );
-// returns <Complex128>
-
-re = real( z );
-// returns 6.0
-
-im = imag( z );
-// returns 8.0
+// zx0 => <Complex128Array>[ 1.0, 2.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0 ]
 ```
 
 #### zdscal.ndarray( N, da, zx, strideZX, offsetZX )
@@ -163,21 +118,11 @@ Scales a double-precision complex floating-point vector by a double-precision fl
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 
 zdscal.ndarray( 3, 2.0, zx, 1, 0 );
-
-var z = zx.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns 2.0
-
-var im = imag( z );
-// returns 4.0
+// zx => <Complex128Array>[ 2.0, 4.0, 6.0, 8.0, 10.0, 12.0 ]
 ```
 
 The function has the following additional parameters:
@@ -188,21 +133,11 @@ While [`typed array`][mdn-typed-array] views mandate a view offset based on the 
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 
 zdscal.ndarray( 2, 2.0, zx, 2, 1 );
-
-var z = zx.get( 3 );
-// returns <Complex128>
-
-var re = real( z );
-// returns 14.0
-
-var im = imag( z );
-// returns 16.0
+// zx => <Complex128Array>[ 1.0, 2.0, 6.0, 8.0, 5.0, 6.0, 14.0, 16.0 ]
 ```
 
 </section>
@@ -226,16 +161,11 @@ var im = imag( z );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
+var zdscal = require( '@stdlib/blas-base-zdscal' );
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
@@ -246,11 +176,6 @@ console.log( zx.toString() );
 
 zdscal( zx.length, 2.0, zx, 1 );
 console.log( zx.toString() );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -343,7 +268,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128/tree/umd
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128
 
 </section>
 
