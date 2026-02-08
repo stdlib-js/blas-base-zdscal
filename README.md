@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import zdscal from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@deno/mod.js';
+import zdscal from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@v0.1.1-deno/mod.js';
 ```
 
 #### zdscal( N, alpha, x, strideX )
@@ -147,7 +147,7 @@ zdscal.ndarray( 2, 2.0, x, 2, 1 );
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
 import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@deno/mod.js';
-import zdscal from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@deno/mod.js';
+import zdscal from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdscal@v0.1.1-deno/mod.js';
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
