@@ -373,8 +373,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/blas-base-zdscal.svg
 [npm-url]: https://npmjs.org/package/@stdlib/blas-base-zdscal
 
-[test-image]: https://github.com/stdlib-js/blas-base-zdscal/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/blas-base-zdscal/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/blas-base-zdscal/actions/workflows/test.yml/badge.svg?branch=v0.1.1
+[test-url]: https://github.com/stdlib-js/blas-base-zdscal/actions/workflows/test.yml?query=branch:v0.1.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-base-zdscal/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/blas-base-zdscal?branch=main
