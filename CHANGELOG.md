@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-02-14)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`091611e`](https://github.com/stdlib-js/stdlib/commit/091611e823cdf35c232dec0ba9ef441f5542acd2) - **bench:** use string interpolation in `blas/base/zdscal` [(#10253)](https://github.com/stdlib-js/stdlib/pull/10253) _(by Om-A-osc)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Om-A-osc
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.1.1">
 
 ## 0.1.1 (2026-02-08)
